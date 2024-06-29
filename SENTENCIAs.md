@@ -34,4 +34,16 @@ WHERE
 -Captura.
 <imag![image](https://github.com/micaelabar/TCS12---Subconsultas/assets/148156209/ba4d9915-f93a-4184-b39b-33934473c207)
 
+## 3. Listar las facturas donde sus totales sean mayores al promedio de las facturas
+ - Sentencia:
+```
+SELECT i.created_at, i.total
+From invoice i
+WHERE i.total > (SELECT AVG(total) FROM invoice);
+````
+-Captura.
+<imag![image](https://github.com/micaelabar/TCS12---Subconsultas/assets/148156209/e00fb228-4c71-4559-95b7-5675acfa1b9b)
+
+
+
 
