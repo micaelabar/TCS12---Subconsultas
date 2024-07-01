@@ -58,8 +58,8 @@ FROM
 -Captura.
 <imag!![Captura de pantalla 2024-07-01 110012](https://github.com/micaelabar/TCS12---Subconsultas/assets/148156209/65765daa-8e05-4f6c-9f36-d2e5c64be341)
 
-
-##4. El número de facturas para cada cliente y muestra el nombre del cliente, su dirección y el total de facturas.
+# Sentencias con SELECT Y WHERE.
+##4.Filtrar por condición negativa.
  - Sentencia:
 ```
 SELECT 
