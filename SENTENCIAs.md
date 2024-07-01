@@ -44,6 +44,35 @@ WHERE i.total > (SELECT AVG(total) FROM invoice);
 -Captura.
 <imag![image](https://github.com/micaelabar/TCS12---Subconsultas/assets/148156209/e00fb228-4c71-4559-95b7-5675acfa1b9b)
 
+#EJEMPLO CON SELECT Y WHERE.
+##3. El número de facturas para cada cliente y muestra el nombre del cliente, su dirección y el total de facturas.
+ - Sentencia:
+```
+SELECT 
+    c.full_name,
+    c.address,
+    (SELECT COUNT(*) FROM invoice i WHERE i.client_id = c.id) AS total_facturas
+FROM 
+    clients c;
+````
+-Captura.
+<imag!![Captura de pantalla 2024-07-01 110012](https://github.com/micaelabar/TCS12---Subconsultas/assets/148156209/65765daa-8e05-4f6c-9f36-d2e5c64be341)
 
+
+##4. El número de facturas para cada cliente y muestra el nombre del cliente, su dirección y el total de facturas.
+ - Sentencia:
+```
+SELECT 
+    c.full_name,
+    c.address
+FROM 
+    clients c
+WHERE 
+    NOT EXISTS (SELECT 1 
+                FROM invoice i 
+                WHERE i.client_id = c.id);
+````
+-Captura.
+<imag!![Captura de pantalla 2024-07-01 110315](https://github.com/micaelabar/TCS12---Subconsultas/assets/148156209/ce9a8d49-b4e5-45ef-b0f1-d7bcffbe100a)
 
 
